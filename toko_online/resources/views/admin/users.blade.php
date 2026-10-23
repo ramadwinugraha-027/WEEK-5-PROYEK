@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Kelola Role User</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +26,6 @@
             padding: 50px 20px;
             color: #1e293b;
         }
-
         .dashboard-card {
             width: 100%;
             max-width: 950px;
@@ -36,12 +36,10 @@
             overflow: hidden;
             animation: slideUp 0.4s ease-out;
         }
-
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .card-header {
             padding: 24px 32px;
             border-bottom: 1px solid #e2e8f0;
@@ -56,7 +54,6 @@
             color: #0f172a;
             letter-spacing: -0.02em;
         }
-
         .btn-back {
             font-size: 0.875rem;
             font-weight: 500;
@@ -76,11 +73,9 @@
             color: #0f172a;
             border-color: #cbd5e1;
         }
-
         .card-body {
             padding: 32px;
         }
-
         .alert {
             padding: 16px;
             border-radius: 10px;
@@ -101,7 +96,6 @@
             border: 1px solid #ef4444;
             color: #991b1b;
         }
-
         .table-container {
             border: 1px solid #e2e8f0;
             border-radius: 12px;
@@ -135,8 +129,6 @@
         tr:hover td {
             background-color: #f8fafc;
         }
-
-
         .badge {
             display: inline-flex;
             align-items: center;
@@ -162,7 +154,6 @@
             color: #475569;
             border: 1px solid #cbd5e1;
         }
-
         .action-form {
             display: flex;
             align-items: center;
@@ -190,7 +181,6 @@
             border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
-
         .btn-save {
             padding: 8px 16px;
             font-size: 0.875rem;
@@ -217,19 +207,16 @@
 <body>
 
     <div class="dashboard-card">
-        <!-- Header -->
         <div class="card-header">
             <h2>Manajemen Role Pengguna</h2>
-            <a href="/dashboard" class="btn-back">
+            <a href="/barang" class="btn-back">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Kembali
             </a>
         </div>
 
-        <!-- Body -->
         <div class="card-body">
             
-            <!-- Notifikasi -->
             @if (session('status'))
                 <div class="alert alert-success">
                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -248,7 +235,6 @@
                 </div>
             @endif
 
-            <!-- Tabel -->
             <div class="table-container">
                 <table>
                     <thead>
