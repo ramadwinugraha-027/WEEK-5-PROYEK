@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelola Role User</title>
     
-    <!-- Memuat Font Modern (Inter) dari Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Pengaturan Dasar */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -28,7 +26,6 @@
             color: #1e293b;
         }
 
-        /* Card Container Utama */
         .dashboard-card {
             width: 100%;
             max-width: 950px;
@@ -40,13 +37,11 @@
             animation: slideUp 0.4s ease-out;
         }
 
-        /* Animasi Muncul */
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Header Bagian Atas */
         .card-header {
             padding: 24px 32px;
             border-bottom: 1px solid #e2e8f0;
@@ -62,7 +57,6 @@
             letter-spacing: -0.02em;
         }
 
-        /* Tombol Kembali di Header */
         .btn-back {
             font-size: 0.875rem;
             font-weight: 500;
@@ -83,12 +77,10 @@
             border-color: #cbd5e1;
         }
 
-        /* Area Konten di Dalam Card */
         .card-body {
             padding: 32px;
         }
 
-        /* Notifikasi / Alert */
         .alert {
             padding: 16px;
             border-radius: 10px;
@@ -110,7 +102,6 @@
             color: #991b1b;
         }
 
-        /* Desain Tabel */
         .table-container {
             border: 1px solid #e2e8f0;
             border-radius: 12px;
@@ -145,7 +136,7 @@
             background-color: #f8fafc;
         }
 
-        /* Badge Role (Desain Pill) */
+
         .badge {
             display: inline-flex;
             align-items: center;
@@ -172,7 +163,6 @@
             border: 1px solid #cbd5e1;
         }
 
-        /* Form & Select Dropdown */
         .action-form {
             display: flex;
             align-items: center;
@@ -201,7 +191,6 @@
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
-        /* Tombol Simpan */
         .btn-save {
             padding: 8px 16px;
             font-size: 0.875rem;
