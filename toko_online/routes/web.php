@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 // Publik
@@ -34,3 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/riwayat', [CheckoutController::class, 'riwayat']);
     Route::get('/riwayat/{id}', [CheckoutController::class, 'detail']);
 });
+
+// PATCH untuk mengubah state, dilindungi auth & Gate manage-roles
+Route::patch('/admin/users/{user}/role', [RoleController::class, 'update'])
+    ->middleware(['auth', 'can:manage-roles'])
+    ->name('admin.users.role.update');
+    
+Route::get('/admin/users', function () {
+    return view('admin.users', ['users' => \App\Models\User::all()]);
+})->middleware(['auth', 'can:manage-roles']);
